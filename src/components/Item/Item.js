@@ -2,15 +2,21 @@ import React from "react";
 import './Items.scss';
 
 const Item = (props) => {
+
+  const {item, addToCart} = props;
+  const addItemToCart = () => {
+    addToCart(item);
+  }
+
   return (
     <div className="item-container">
       <div className="image-container">
-        <img src={props.item.path} width="200" height="200"/>
+        <img src={item.path} width="200" height="200"/>
       </div>
       <div className="item-details">
-        <div className="item-name">{props.item.name}</div>
-        <div>{props.item.price}</div>
-        <button className="add-to-cart">Add to Cart</button>
+        <div className="item-name">{item.name}</div>
+        <div>{item.price}</div>
+        <button className="add-to-cart" onClick={addItemToCart}>Add to Cart</button>
       </div>
     </div>
   );
