@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Header from "../Header/Header";
+import ShoppingItems from "../ShoppingItems/ShoppingItems";
 
 const Dashboard = () => {
 
@@ -8,6 +9,7 @@ const Dashboard = () => {
   return (
     <div>
       <Header cartCount={cartCount}/>
+      <ShoppingItems/>
     </div>
   );
 }
