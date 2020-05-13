@@ -5,7 +5,7 @@ import CartItems from "../CartItems/CartItems";
 
 const Header = (props) => {
 
-  const {cartItems} = props;
+  const {cartItems, addQuantity, removeQuantity} = props;
   const [showCartItems, setShowCartItems] = useState(false);
   const closeCartItemsPopup = () => setShowCartItems(false);
   const showItems = () => {
@@ -26,7 +26,9 @@ const Header = (props) => {
              closeOnEscape={true} onClose={closeCartItemsPopup}
              open={showCartItems} position="top center"
       >
-        <CartItems cartItems={cartItems}/>
+        <CartItems cartItems={cartItems}
+                   addQuantity={addQuantity}
+                   removeQuantity={removeQuantity}/>
       </Popup>}
     </div>
   );

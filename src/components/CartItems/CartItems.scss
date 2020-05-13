@@ -7,10 +7,14 @@
     background: black;
     display: flex;
     justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 
     .total-amount {
       color: white;
-      padding: 15px 320px;
+      padding: 15px 150px;
       font-weight: 700;
       font-size: 25px;
     }

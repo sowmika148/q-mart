@@ -4,8 +4,12 @@ import CartItem from "./CartItem/CartItem";
 
 const CartItems = (props) => {
 
-  const {cartItems} = props;
-  const computeTotal = () => {return 100};
+  const {cartItems, addQuantity, removeQuantity} = props;
+  const computeTotal = () => {
+    let total = 0;
+    [...cartItems.keys()].forEach(key => total += cartItems.get(key).quantity * cartItems.get(key).price);
+    return total;
+  };
 
   return (
     <div className="cart-items-container">
@@ -16,7 +20,9 @@ const CartItems = (props) => {
           </div>
           {[...cartItems.keys()].map(key => {
             return (
-              <CartItem item={cartItems.get(key)} id={key}/>
+              <CartItem item={cartItems.get(key)} id={key}
+                        addQuantity={addQuantity}
+                        removeQuantity={removeQuantity}/>
             )
           })}
         </div>

@@ -3,7 +3,15 @@ import './CartItems.scss';
 
 const CartItem = (props) => {
 
-  const {item} = props;
+  const {item, addQuantity, removeQuantity} = props;
+
+  const decreaseQuantity = () => {
+    removeQuantity(item);
+  }
+
+  const increaseQuantity = () => {
+    addQuantity(item);
+  }
 
   return (
     <div className="item-container cart-item-container">
@@ -12,7 +20,12 @@ const CartItem = (props) => {
       </div>
       <div className="item-details cart-item-details">
         <div className="item-name">{item.name}</div>
-        <div>{item.price}</div>
+        <div>Rs. {item.price}</div>
+        <div>
+          <button className="minus-button" onClick={decreaseQuantity}>-</button>
+          {item.quantity}
+          <button className="plus-button" onClick={increaseQuantity}>+</button>
+        </div>
       </div>
     </div>
   );

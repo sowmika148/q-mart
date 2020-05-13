@@ -15,7 +15,7 @@ const Item = (props) => {
       </div>
       <div className="item-details">
         <div className="item-name">{item.name}</div>
-        <div>{item.price}</div>
+        <div>Rs. {item.price}</div>
         <button className="add-to-cart" onClick={addItemToCart}>Add to Cart</button>
       </div>
     </div>
