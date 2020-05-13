@@ -1,0 +1,28 @@
+.cart-items-container {
+  overflow: scroll;
+  height: 700px;
+
+  .cart-items-header {
+    height: 60px;
+    background: black;
+    display: flex;
+    justify-content: flex-end;
+
+    .total-amount {
+      color: white;
+      padding: 15px 320px;
+      font-weight: 700;
+      font-size: 25px;
+    }
+  }
+
+  .cart-item-details {
+    padding: 25px;
+  }
+
+  .no-items {
+    font-weight: 400;
+    font-size: 28px;
+    padding: 50px;
+  }
+}
